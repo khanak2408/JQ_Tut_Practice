@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <title>Demo JQuery</title>
+    <head>
+        <script src="./JQ/jquery-3.5.1.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            $(window).on('load',function(){
+                $('#MyDiv').html("Height="+ $('#img1').height() + "<br/>" + "Width=" + $('#img1').width());
+            });
+         
+        </script>
+        <div id="MyDiv"></div>
+       <img src="./images/Capture.PNG" alt="Test" id="img1"/>
+    </body>
+</html>

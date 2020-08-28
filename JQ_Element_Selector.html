@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <title>Demo JQuery</title>
+    <head>
+        <script src="./JQ/jquery-3.5.1.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#mytable tr').each(function(){
+                    alert($(this).html());
+                });
+            });    
+        </script>
+        <table id="mytable">
+            <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            </tr>
+            <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+            </tr>
+            <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+            </tr>
+        </table>
+    </body>
+</html>
