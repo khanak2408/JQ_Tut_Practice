@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+    <script src="./JQ/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            /* 
+            // For Single Select
+                $('#interestedCourse').change(function(){
+                    var selectedOption=$('#interestedCourse option:selected');
+                    $('#MyDiv').html('Value='+selectedOption.val()+",Text= "+selectedOption.text());
+                });
+            */
+
+            $('#interestedCollege').change(function(){
+                var selectedOption=$('#interestedCollege option:selected');
+                if(selectedOption.length>0)
+                {
+                    var resultString='';
+                    selectedOption.each(function(){
+                        resultString+='value='+$(this).val()+',Text='+$(this).text()+"<br/>";
+                    });
+                }
+                $('#MyDiv').html(resultString);
+            });
+        });
+    </script>
+    <label for="courses">Select Your Courses</label>
+    <Select name="courses" id="interestedCourse">
+        <option value="No Value">Please Select Your Course</option>
+        <Option value="MBA">MBA</Option>
+        <Option value="BBA">BBA</Option>
+        <Option value="BTECH">BTECH</Option>
+        <Option value="BSC">BSC</Option>
+        <Option value="MTECH">MTECH</Option>
+    </Select>
+    <br/>
+    <br/>
+    <label for="college">Select Your College</label>
+    <Select name="college" id="interestedCollege" multiple="multiple">
+        <option value="No Value">Please Select Your College</option>
+        <Option value="SKIT">SKIT</Option>
+        <Option value="PU">PU</Option>
+        <Option value="RMIT">RMIT</Option>
+        <Option value="PCE">PCE</Option>
+        <Option value="JIMS">JIMS</Option>
+    </Select>
+    <br>
+    <div id="MyDiv">
+
+    </div>
+</body>
+</html>

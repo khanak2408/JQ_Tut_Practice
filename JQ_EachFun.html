@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Each Function</title>
+
+    <script src="./JQ/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('li').each(function(index,element){
+            if($(this).text()=='MSC'){
+                return false;
+            }
+                alert(index+":"+$(element).text());
+            });
+
+            $('li').each(function(){
+                $(this).css('border','2px solid pink');
+            });
+
+            $('li').css('border','5px solid red');
+        });
+    </script>
+    <ul>
+        <li>BBA</li>
+        <li>BCOM</li>
+        <li>MSC</li>
+        <li>BSC</li>
+        <li>fSC</li>
+    </ul>
+</body>
+</html>

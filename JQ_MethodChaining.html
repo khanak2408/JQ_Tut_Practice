@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Chaining</title>
+    <script src="./JQ/jquery-3.5.1.js"></script>
+
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('li').css('border','1px solid red').slideUp(1000).slideDown(1000).attr('title','MyTitle');
+        });
+    </script>
+    <ul>
+        <li>BBA</li>
+        <li>MBA</li>
+        <li>BCOM</li>
+        <li>MCOM</li>
+    </ul>
+</body>
+</html>
