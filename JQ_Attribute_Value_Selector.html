@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <title>Hello, world!</title>
+      <script src="./JQ/jquery-3.5.1.js"></script>
+    </head>
+  </head>
+  <body>
+    <!-- 
+        $(document).ready(function(){
+            $('[title="Green"]').css({'background-color':'Green','border':'2px solid blue','margin':'10px'});
+        });
+    -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('div[title]').filter(function(){
+                return $(this).attr('title').toLowerCase()=="green";
+            }).css({'background-color':'Green','border':'2px solid blue','margin':'10px'});
+
+
+            $('div[title*="blue"]').css({'background-color':'Blue','border':'2px solid black','margin':'10px'});
+
+            $('div[title]').filter(function(){
+                return (/Blue/i).test($(this).attr('title'));
+            }).css({'background-color':'Blue','border':'2px solid black','margin':'10px'});
+
+            $('div[title]').filter(function(){
+                return RegExp('Blue','i').test($(this).attr('title'));
+            }).css({'background-color':'BLUE','border':'5px solid Pink','margin':'10px'});;
+
+        });
+    </script>
+    <div title="Green">
+        This is Green Box
+    </div>
+
+    <div title="green">
+        This is also green box
+    </div>
+
+    <div title="bluebox">
+        This is Blue BOX
+    </div>
+    <div title="Bluebox">
+        This is also Blue BOX
+    </div>
+
+    <div title="BLUEbox">
+        This is also Blue Box
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

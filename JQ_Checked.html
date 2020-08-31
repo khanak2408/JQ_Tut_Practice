@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JQ/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <!--
+        $('#btnRegister').click(function(){
+                var myRes=$('input[type="radio"]:checked');
+                if(myRes.length>0)
+                {
+                    $('#MyDiv').html(myRes.val()+' Checked');
+                }
+                else
+                {
+                    $('#MyDiv').html(myRes.val()+' Checked');
+                }
+            });
+    -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btnRegister').click(function(){
+                var myRes=$('input[type="checkbox"]:checked');
+                if(myRes.length>0){
+                    var resString=myRes.length+ "Checkbox Checked <br/>";
+                    myRes.each(function(){
+                       resString+= $(this).val()+"<br/>";
+                    });
+                    $('#MyDiv').html(resString);
+                }
+                else
+                {
+                    $('#MyDiv').html('No items are checked');
+                }
+            });
+        });
+    </script>
+    <!-- Please Select Gender:<input type="radio" name="gender" id="rbMale" value="Male">
+    <label for="male">Male</label>
+    <input type="radio" name="gender" id="rdFemale" value="Female">
+    <label for="Female">Female</label><br>
+    <br/>
+    <br/> -->
+
+    Please Choose Your Course:<input type="checkbox" name="Courses" value="MBA" id="chkMBA"> MBA 
+                              <input type="checkbox" name="Courses" value="BBA" id="chkBBA"> BBA
+                              <input type="checkbox" name="Courses" value= "MTECH" id="chkMTECH"> MTECH  
+    <br/>    
+    <input type="submit" value="Register" id="btnRegister">
+    <div id="MyDiv">
+    </div>
+</body>
+</html>

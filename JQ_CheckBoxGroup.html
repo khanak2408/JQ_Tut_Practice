@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Box Group</title>
+    <script src="./JQ/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btnCourses').click(function(){
+                getCheckedCheckBoxes('Courses');
+            });
+            $('#btnCollege').click(function(){
+                getCheckedCheckBoxes('College');
+            });
+        });
+
+        var getCheckedCheckBoxes=function(groupName){
+            var myRes=$('input[name="'+groupName+'"]:checked');
+            if(myRes.length>0){
+                    var resString=myRes.length+ "Checkbox Checked <br/>";
+                    myRes.each(function(){
+                       resString+= $(this).val()+"<br/>";
+                    });
+                    $('#MyDiv'+groupName).html(resString);
+            }
+            else
+            {
+                $('#MyDivCourses').html('No items are checked');
+            }
+        }
+    </script>
+
+    Please Choose Your Course:<input type="checkbox" name="Courses" value="MBA" id="chkMBA"> MBA 
+    <input type="checkbox" name="Courses" value="BBA" id="chkBBA"> BBA
+    <input type="checkbox" name="Courses" value= "MTECH" id="chkMTECH"> MTECH  
+    <br/>    
+
+    Please Choose Your College:<input type="checkbox" name="College" value="SKIT" id="chkSKIT">SKIT
+    <input type="checkbox" name="College" value="Poornima" id="chkPoornima">Poornima
+    <input type="checkbox" name="Collage" value= "PU" id="chkPU"> PU  
+    <br/>
+
+    <input type="submit" value="Courses" id="btnCourses">
+    <input type="submit" value="College" id="btnCollege">
+    <div id="MyDivCourses">
+    </div>
+    <div id="MyDivCollege">
+    </div>
+</body>
+</html>
