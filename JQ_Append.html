@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Append</title>
+    <script src="./JQ/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('div').append(' <b>Contents</b> ');
+
+            $(' <b>Append</b>').appendTo('div');
+            
+            $('div').prepend(' <b>Contents</b> ');
+
+            $(' <b>Hello</b>').prependTo('div');
+        });
+    </script>
+    <div>
+        Hi Div 1
+    </div>
+    <div>
+        Hi Div 2
+    </div>
+</body>
+</html>
