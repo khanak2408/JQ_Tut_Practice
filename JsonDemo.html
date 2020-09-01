@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Demo</title>
+    <script src="./JQ/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var employeesList=[{
+            "FirstName":"Praveen",
+            "LastName":"Yadav",
+            "Gender":"Male",
+            "Salary":50000
+        },
+
+        {
+            "FirstName":"Somya",
+            "LastName":"Saxena",
+            "Gender":"Female",
+            "Salary":55000
+        }
+    ];
+
+    var nestedemployeesList={
+        "Praveen":{
+            "FirstName":"Praveen",
+            "LastName":"Yadav",
+            "Gender":"Male",
+            "Salary":50000
+        },
+
+        "Somya":{
+            "FirstName":"Somya",
+            "LastName":"Saxena",
+            "Gender":"Female",
+            "Salary":55000
+        }
+    };
+    var result='';
+    result+=employeesList[0].FirstName+" "+employeesList[1].LastName+ " "+nestedemployeesList.Somya.Salary;
+    $('#MyDiv').html(result);
+    });
+    </script>
+    <div id="MyDiv">
+    </div>
+</body>
+</html>
