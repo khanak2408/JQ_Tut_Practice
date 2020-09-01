@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <script src="./JQ/jquery-3.5.1.js"></script>
+    <style>
+        .btnStyle{
+            background-color: green;
+            color:hotpink;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btnShow').bind('click mouseover mouseout',function(event){
+                if(event.type=='click'){
+                    $('#divResult').html('Button is clicked at x='+event.pageX+' y='+event.pageY);
+                }
+                else if(event.type=='mouseover'){
+                    $(this).addClass('btnStyle');
+                }
+                else{
+                    $(this).removeClass('btnStyle');
+                }
+            });
+
+            $('#btnBindStyle').click(function(){
+                $('#btnShow').bind('mouseover',function(){
+                    $(this).addClass('btnStyle');
+                });
+            });
+
+            $('#btnUnBindStyle').click(function(){
+                $('#btnShow').unbind('mouseover');
+            });
+        });
+    </script>
+
+    <input type="button" value="Show" id="btnShow"/>
+    <input type="button" value="BindWithStyle" id="btnBindStyle"/>
+    <input type="button" value="RemoveStyle" id="btnUnBindStyle"/>
+    <div id="divResult">
+
+    </div>
+</body>
+</html>

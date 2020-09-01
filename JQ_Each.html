@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$.Each</title>
+    <script src="./JQ/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+            var intArray=[100,200,300];
+
+            var jsObject={
+                'UN':'Praveen',
+                'Salary':50000
+            };
+            var result='';
+            $('li').each(function(index,element){
+                result+='index='+index+' element='+$(element).text()+'<br/>';
+            });
+            $('#MyDiv').html(result);
+
+            $.each(intArray,function(index,element){
+                result+='index='+index+"item="+element+"<br>";
+            });
+             
+            $.each(jsObject,function(key,value){
+                result+='Key='+key+"item="+value+"<br>";
+            }); 
+            $('#MeraDiv').html(result);
+
+        });
+        
+
+    </script>
+
+    <ul>
+        <li>INDIA</li>
+        <li>USA</li>
+        <li>JAPAN</li>
+        <li>CANADA</li>
+        <li>SRILANKA</li>
+    </ul>
+
+    <div id="MyDiv">
+
+    </div>
+    <div id="MeraDiv"> 
+
+    </div>
+</body>
+</html>

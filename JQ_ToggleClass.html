@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ Toggle</title>
+    <script src="JQ/jquery-3.5.1.js"></script>
+    <style>
+        .txtboxstyle{
+            background-color: aqua;
+            color:gold;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('input[type="text"]').each(function(){
+                $(this).focus(function(){
+                    $(this).addClass('txtboxstyle');
+                });
+                $(this).blur(function(){
+                    $(this).removeClass('txtboxstyle');
+                });
+            });
+        });
+    </script>
+    <label for="txtUserName">Please Enter Your Name</label>
+    <input type="text" name="UserName" id="txtUserName">
+
+</body>
+</html>

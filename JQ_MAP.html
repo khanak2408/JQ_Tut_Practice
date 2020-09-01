@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery MAP</title>
+    <script src="./JQ/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           /*
+            var result='';
+            $('li').each(function(index,element){
+                result+=$(element).text()+'|';
+            });
+            
+            result=result.substr(0,result.length-1)
+            alert(result);
+            */
+            
+
+            var res=$('li').map(function(index,element){
+                return $(element).text();
+            }).get().join('|');
+            alert(res);
+        });
+    </script>
+    <ul>
+        <li>C++</li>
+        <li>DotNet</li>
+        <li>Python</li>
+    </ul>
+</body>
+</html>
